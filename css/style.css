@@ -80,7 +80,7 @@ body{
 	padding-top: 41px;
 }
 .header__logo{
-	background: url("/img/header/logo.png") center no-repeat;
+	background: url("../img/header/logo.png") center no-repeat;
 	height: 63px;
 	width: 110px;
 	background-size: contain;
@@ -95,8 +95,14 @@ body{
 	padding-bottom: 15px;
 }
 .fixed .header__logo{
-	background: url("/img/header/logo_fixed.png") center no-repeat;
+	background: url("../img/header/logo_fixed.png") center no-repeat;
 	background-size: contain;
+	z-index: 10;
+}
+.active{
+	background: url("../img/header/logo_fixed.png") center no-repeat;
+	background-size: contain;
+	z-index: 10;
 }
 .header__nav{
 	display: flex;
@@ -132,13 +138,11 @@ body{
 .fixed .nav__link{
 	color: #333333;
 }
-.phone{
-	font-size: 20px;
-}
 /* Burger */
 .burger{
 	display: none;
 	padding-top: 25px;
+	z-index: 10;
 }
 .burger__item{
 	display: block;
@@ -170,7 +174,7 @@ body{
 
 /* Intro */
 .intro{
-	background: linear-gradient(90deg, rgba(41, 46, 138, 0.9) 0%, #F33D87 100%), #292E8A url("/img/intro/intro_bg.png") center no-repeat;
+	background: linear-gradient(90deg, rgba(41, 46, 138, 0.9) 0%, #F33D87 100%), #292E8A url("../img/intro/intro_bg.png") center no-repeat;
 	opacity: 0.92;
 	background-size: cover;
 	padding-top: 150px;
@@ -183,7 +187,7 @@ body{
 	padding-top: 60px;
 }
 .intro__img{
-	background: url("/img/intro/intro_img.png") center no-repeat;
+	background: url("../img/intro/intro_img.png") center no-repeat;
 	background-size:contain;
 	margin-right: -115px;
 	z-index: -1;
@@ -530,7 +534,7 @@ body{
 	margin-top: 40px;
 }
 .reviews__info{
-	background: url("/img/reviews/review_frame.svg") center no-repeat;
+	background: url("../img/reviews/review_frame.svg") center no-repeat;
 	height: 357px;
 	width: 912px;
 	padding-left: 44px;
@@ -590,11 +594,11 @@ body{
 	margin-top: 100px
 }
 .slick-prev{
-	background: url("/img/reviews/arrow_left.png") center no-repeat;
+	background: url("../img/reviews/arrow_left.png") center no-repeat;
 	width: 50px;
 }
 .slick-next{
-	background: url("/img/reviews/arrow_right.png") center no-repeat;
+	background: url("../img/reviews/arrow_right.png") center no-repeat;
 	width: 90px;
 }
 
@@ -986,11 +990,19 @@ body{
 	}
 	.show{
 		display: flex;
+		transition: all .2s linear;
+	}
+	.show .nav__link{
+		color: #333333;
+	}
+	.show .search__icon{
+		fill:#333333;
 	}
 	.nav__link{
 		white-space: nowrap;
 		padding: 7px 15px;
 		margin-right: 0;
+		margin-bottom: 40px;
 	}
 	.burger{
 		display: block;

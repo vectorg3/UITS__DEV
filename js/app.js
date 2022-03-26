@@ -4,6 +4,7 @@ $(function () {
     let introH = intro.innerHeight();
     let scrollPos = $(window).scrollTop();
     let nav = $("#nav");
+    let logo = $("#logo");
 
     $(window).on("scroll", function () {
         scrollPos = $(this).scrollTop();
@@ -13,12 +14,14 @@ $(function () {
             header.removeClass("fixed");
         }
         nav.removeClass("show");
+        logo.removeClass("active");
     })
 
 
 
     $("#navToggle").on("click", function (event) {
         nav.toggleClass("show")
+        logo.toggleClass("active");
     })
 
     let sliderDepartments = $("#departmentsSlider");
