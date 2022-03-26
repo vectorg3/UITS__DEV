@@ -947,6 +947,9 @@ body{
 	}
 }
 @media (max-width: 1292px){
+	.fixed .header__inner{
+		padding-top: 0;
+	}
 	.intro__stats{
 		float:left;
 		width: 100%;

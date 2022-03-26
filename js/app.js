@@ -69,7 +69,7 @@ $(function () {
         dots: true,
         responsive: [
             {
-                breakpoint: 767,
+                breakpoint: 967,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
