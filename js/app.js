@@ -1,4 +1,25 @@
 $(function () {
+    let header = $("#header");
+    let intro = $("#intro");
+    let introH = intro.innerHeight();
+    let scrollPos = $(window).scrollTop();
+    let nav = $("#nav");
+
+    $(window).on("scroll", function () {
+        scrollPos = $(this).scrollTop();
+        if (scrollPos > introH) {
+            header.addClass("fixed");
+        } else {
+            header.removeClass("fixed");
+        }
+        nav.removeClass("show");
+    })
+
+
+
+    $("#navToggle").on("click", function (event) {
+        nav.toggleClass("show")
+    })
 
     let sliderDepartments = $("#departmentsSlider");
 
@@ -8,12 +29,53 @@ $(function () {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
+        responsive: [
+            {
+                breakpoint: 1480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 1067,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 868,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            }
+        ]
     });
 
     let sliderReviews = $("#reviewsSlider");
     sliderReviews.slick({
         infinite: true,
         dots: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                    arrows: false,
+                }
+            }
+        ]
     });
 
     let sliderStudents = $("#studentsSlider");
@@ -23,6 +85,28 @@ $(function () {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
+        responsive: [
+            {
+                breakpoint: 1480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 703,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            }
+        ]
     });
+
+
 
 });

@@ -19,12 +19,23 @@
 </head>
 
 <body>
-    <div class="intro">
+    <svg style="display:none;">
+        <symbol id="search" viewBox="0 0 612.01 612.01">
+            <g>
+                <path d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0
+                        C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586
+                        l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8
+                        c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407
+                        S377.82,467.8,257.493,467.8z" />
+            </g>
+
+        </symbol>
+    </svg>
+    <header class="header" id="header">
         <div class="container">
-            <!-- Header -->
-            <header class="header">
+            <div class="header__inner">
                 <a href="#" class="header__logo"></a>
-                <div class="header__nav">
+                <div class="header__nav" id="nav">
                     <a href="#" class="nav__link">
                         Абитуриентам
                     </a>
@@ -38,10 +49,22 @@
                         Контакты
                     </a>
                     <a href="#" class="nav__link">
-                        <img src="/img/search_btn.svg" alt="">
+                        <svg class="search__icon">
+                            <use xlink:href="#search"></use>
+                        </svg>
                     </a>
                 </div>
-            </header>
+                <button class="burger" id="navToggle">
+                    <span class="burger__item">
+
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="intro" id="intro">
+        <div class="container">
+            <!-- Header -->
             <!-- Header -->
 
             <div class="intro__inner">
@@ -50,7 +73,7 @@
                         ВГУИТ
                     </div>
                     <h1 class="intro__title">
-                        Факультет управления и информатики в технологических исистемах
+                        Факультет управления и информатики в технологических системах
                     </h1>
                     <a href="#" class="btn intro__btn">
                         Хочу поступить
@@ -98,7 +121,7 @@
     </div>
     <div class="applicants">
         <div class="container">
-            <div class="applicants__title">
+            <div class="applicants__title title">
                 Абитуриентам
             </div>
             <div class="applicants__cards">
@@ -149,7 +172,7 @@
     </div>
     <div class="departments">
         <div class="container">
-            <div class="departments__title">
+            <div class="departments__title title">
                 Кафедры
             </div>
             <div class="departments__cards" id="departmentsSlider">
@@ -256,7 +279,7 @@
     <!-- Reviews -->
     <div class="reviews">
         <div class="container">
-            <h2 class="reviews__title">
+            <h2 class="reviews__title title">
                 Отзывы студентов и выпускников
                 <span></span>
             </h2>
@@ -394,7 +417,7 @@
     </div>
     <div class="students">
         <div class="container">
-            <div class="students__title">
+            <div class="students__title title">
                 Студенческая жизнь
                 <span></span>
             </div>
@@ -469,7 +492,7 @@
     </div>
     <div class="partners">
         <div class="container">
-            <div class="partners__title">
+            <div class="partners__title title">
                 Наши партнеры
                 <span></span>
             </div>
@@ -505,63 +528,63 @@
             <div class="container">
                 <div class="join__inner">
                     <div class="join__content">
-                        <div class="join__title">
+                        <div class="join__title title">
                             Хочешь к нам поступить?
                             <span></span>
                         </div>
-                        <div class="join__contacts">
-                            <p class="number">
-                                +7(473) 255 42 67
-                            </p>
-                            <p class="website">
-                                vsuet.ru
-                            </p>
-                            <p class="address">
-                                г. Воронеж, пр. Революции,19
-                            </p>
-                        </div>
+                        <form class="join__form" action="#">
+                            <div class="form__personalData">
+                                <div class="form__field form-name">
+                                    <input type="text" class="form__input" placeholder=" ">
+                                    <label class="form__label">Фамилия</label>
+                                </div>
+                                <div class="form__field form-name">
+                                    <input type="text" class="form__input" placeholder=" ">
+                                    <label class="form__label">Имя</label>
+                                </div>
+                                <div class="form__field form-number">
+                                    <input type="text" class="form__input" placeholder=" ">
+                                    <label class="form__label">Номер телефона</label>
+                                </div>
+                                <div class="form__field form-email">
+                                    <input type="text" class="form__input" placeholder=" ">
+                                    <label class="form__label">E-mail</label>
+                                </div>
+                            </div>
+                            <div class="form__field form-questions">
+                                <input type="text" class="form__input" placeholder=" ">
+                                <label class="form__label">Остались вопросы?</label>
+                            </div>
+                            <div class="form__file">
+                                <input type="file" name="file" id="file">
+                                <label for="file" class="form__inputfile"><img src="/img/join/file__icon.png"
+                                        alt="">Прикрепить файлы</label>
+                            </div>
+                            <button type="submit" class="form__button btn">Отправить сообщение</button>
+                        </form>
+                    </div>
+                    <div class="join__contacts">
+                        <p class="number">
+                            +7(473) 255 42 67
+                        </p>
+                        <p class="website">
+                            vsuet.ru
+                        </p>
+                        <p class="address">
+                            г. Воронеж, пр. Революции,19
+                        </p>
                         <div class="join__social">
                             <a href="#" class="social__item"><img src="/img/join/social__icon1.png" alt=""></a>
                             <a href="#" class="social__item"><img src="/img/join/social__icon2.png" alt=""></a>
                             <a href="#" class="social__item"><img src="/img/join/social__icon3.png" alt=""></a>
                         </div>
                     </div>
-                    <form class="join__form" action="#">
-                        <div class="form__personalData">
-                            <div class="form__field form-name">
-                                <input type="text" class="form__input" placeholder=" ">
-                                <label class="form__label">Фамилия</label>
-                            </div>
-                            <div class="form__field form-name">
-                                <input type="text" class="form__input" placeholder=" ">
-                                <label class="form__label">Имя</label>
-                            </div>
-                            <div class="form__field form-number">
-                                <input type="text" class="form__input" placeholder=" ">
-                                <label class="form__label">Номер телефона</label>
-                            </div>
-                            <div class="form__field form-email">
-                                <input type="text" class="form__input" placeholder=" ">
-                                <label class="form__label">E-mail</label>
-                            </div>
-                        </div>
-                        <div class="form__field form-questions">
-                            <input type="text" class="form__input" placeholder=" ">
-                            <label class="form__label">Остались вопросы?</label>
-                        </div>
-                        <div class="form__file">
-                            <input type="file" name="file" id="file">
-                            <label for="file" class="form__inputfile"><img src="/img/join/file__icon.png"
-                                    alt="">Прикрепить файлы</label>
-                        </div>
-                        <button type="submit" class="form__button btn">Отправить сообщение</button>
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="/js/app.js"></script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="/js/app.js"></script>
 </body>
 
 </html>
